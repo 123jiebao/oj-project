@@ -1,0 +1,23 @@
+package com.lzy.ojmodel.model.codesandbox;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ExecuteCodeResponse {
+
+    private List<String> outputList;
+
+    private JudgeInfo judgeInfo;
+
+    private String message;
+
+    private Integer status;
+}

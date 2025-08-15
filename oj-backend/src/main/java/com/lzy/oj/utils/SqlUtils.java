@@ -1,0 +1,26 @@
+package com.lzy.oj.utils;
+
+import org.apache.commons.lang3.StringUtils;
+
+/**
+ * SQL 工具
+ *
+
+ */
+public class SqlUtils {
+
+    /**
+     * 校验排序字段是否合法（防止 SQL 注入）
+     *
+     * @param sortField 排序字段
+     * @return 是否合法
+     */
+    public static boolean validSortField(String sortField) {
+        // 如果排序字段为空，则返回 false
+        if (StringUtils.isBlank(sortField)) {
+            return false;
+        }
+        // 如果排序字段包含 =、(、)、空格，则返回 false
+        return !StringUtils.containsAny(sortField, "=", "(", ")", " ");
+    }
+}
